@@ -1,95 +1,154 @@
+/* Importing Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-  }
-  
-  .container {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
-  input {
-    padding: 10px;
-    width: 80%;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
-  #result {
-    margin-top: 20px;
-    font-size: 1.2rem;
-  }
-/* Clear button styling */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif; /* Using Poppins Font */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* Black Background */
+  color: #fff; /* White Text */
+}
+
+/* Container Styling */
+.container {
+  text-align: center;
+  background: #1a1a1a; /* Darker Grey Background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Soft Shadow */
+  width: 90%; /* Responsive Width */
+  max-width: 400px; /* Maximum Width for Large Screens */
+}
+
+/* Title Styling */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00ffcc; /* Aqua Text */
+}
+
+/* Input Styling */
+input {
+  padding: 12px;
+  width: 90%;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #333; /* Dark Input Background */
+  color: #fff; /* White Text */
+  text-align: center;
+}
+
+/* Buttons Styling */
+button {
+  padding: 12px 20px;
+  margin: 5px;
+  background-color: #00ffcc; /* Aqua Button */
+  color: #000; /* Black Text on Button */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #009999; /* Darker Aqua on Hover */
+}
+
+/* Clear Button */
 #clear-button {
-    margin-left: 10px;
-    padding: 10px 20px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #ff4d4d; /* Red Button */
+}
+
+#clear-button:hover {
+  background-color: #cc0000; /* Darker Red on Hover */
+}
+
+/* Result Text Styling */
+#result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff; /* White Result Text */
+}
+
+/* History Section */
+h2 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #fff; /* White Text */
+}
+
+#history-list {
+  margin-top: 10px;
+  padding: 0;
+  list-style-type: none;
+}
+
+#history-list li {
+  background: #333; /* Darker Background */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff; /* White Text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle Shadow */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem; /* Smaller Font for Title */
   }
-  
-  #clear-button:hover {
-    background-color: #c82333;
-  }
-  
-  /* History list styling */
-  #history-list {
-    margin-top: 20px;
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  #history-list li {
-    background: rgba(255, 255, 255, 0.1);
-    margin: 5px 0;
+
+  input {
+    font-size: 0.9rem; /* Smaller Input Font */
     padding: 10px;
-    border-radius: 5px;
-    color: white;
   }
-   /* Update History title styling */
-h3 {
-    font-size: 1rem; /* Smaller font size */
-    margin-top: 20px; /* Space above the title */
-    margin-bottom: 10px; /* Space below the title */
-    text-align: center; /* Center align the text */
-  } 
+
+  button {
+    font-size: 0.9rem; /* Smaller Button Font */
+    padding: 10px 18px;
+  }
+
+  #history-list li {
+    font-size: 0.9rem; /* Smaller History Items */
+  }
+}
+/* Logo Section Styling */
+.logo {
+    text-align: center;
+    margin-bottom: 200px;
+  }
+  
+  #logo-image {
+    width: 80px; /* Adjust the size of the logo */
+    height: auto;
+  }
+  
+  /* Footer Styling */
+  footer {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc; /* Light grey text */
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
